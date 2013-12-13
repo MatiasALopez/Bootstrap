@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Sitio.master.cs" Inherits="PruebaBootstrap.Sitio" %>
+<%@ Import Namespace="System.Web.Optimization" %>
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%: Styles.Render("~/styles/bootstrap") %>
+    <%: Styles.Render("~/styles/base") %>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+
+                    <!-- La clase .btn-navbar se usa como boton que realiza el toogle sobre el contenido oculto que se especifica más abajo -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <!-- El brand queda independiente, para que sea visible siempre -->
+                    <a class="brand" href="Default.aspx">Probando BS</a>
+
+                    <!-- Todo lo que esta dentro de este div, se ocultará cuando el tamaño de la pantalla sea 940px o menos -->
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="Default.aspx">Home</a></li>
+                            <li><a href="Componentes.aspx">Componentes</a></li>
+                            <li><a href="Funcionalidades.aspx">Funcionalidades</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="mainContainer" class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:PlaceHolder ID="phScripts" runat="server">     
+            <%: Scripts.Render("~/scripts/base") %>
+        </asp:PlaceHolder>
+    </form>
+</body>
+</html>
